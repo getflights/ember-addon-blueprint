@@ -18,11 +18,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      <% if (pnpm) {%>- uses: wyvox/action-setup-pnpm@v2
-      <% } else { %>- name: Install Node
-        uses: actions/setup-node@v3
+      - uses: <%= pnpm ? 'wyvox/action-setup-pnpm@v2' : 'actions/setup-node@v3' %>
         with:
-          node-version: 16.x
+          node-version: 16<% if (!pnpm) { %>
           cache: <%= yarn ? 'yarn' : 'npm' %>
       - name: Install Dependencies
         run: <%= yarn ? 'yarn install --frozen-lockfile' : 'npm ci' %><%}%>
@@ -37,11 +35,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      <% if (pnpm) {%>- uses: wyvox/action-setup-pnpm@v2
-      <% } else { %>- name: Install Node
-        uses: actions/setup-node@v3
+      - uses: <%= pnpm ? 'wyvox/action-setup-pnpm@v2' : 'actions/setup-node@v3' %>
         with:
-          node-version: 16.x
+          node-version: 16<% if (!pnpm) { %>
           cache: <%= yarn ? 'yarn' : 'npm' %>
       - name: Install Dependencies
         run: <%= yarn ? 'yarn install --frozen-lockfile' : 'npm ci' %><%}%>
@@ -67,11 +63,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      <% if (pnpm) {%>- uses: wyvox/action-setup-pnpm@v2
-      <% } else { %>- name: Install Node
-        uses: actions/setup-node@v3
+      - uses: <%= pnpm ? 'wyvox/action-setup-pnpm@v2' : 'actions/setup-node@v3' %>
         with:
-          node-version: 16.x
+          node-version: 16<% if (!pnpm) { %>
           cache: <%= yarn ? 'yarn' : 'npm' %>
       - name: Install Dependencies
         run: <%= yarn ? 'yarn install --frozen-lockfile' : 'npm ci' %><%}%>
