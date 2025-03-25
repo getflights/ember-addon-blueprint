@@ -2,12 +2,19 @@
   "name": "@ember/addon-blueprint",
   "version": "0.0.0",
   "description": "",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ember-cli/ember-addon-blueprint.git"
+  },
+  "license": "MIT",
+  "author": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "devDependencies": {
+    "release-plan": "^0.16.0"
+  },
   "packageManager": "pnpm@10.6.5"
 }
