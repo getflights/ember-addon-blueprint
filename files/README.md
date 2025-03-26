@@ -1,4 +1,4 @@
-# <%= addonName %>
+# <%= name %>
 
 [Short description of the addon.]
 
@@ -10,7 +10,7 @@
 ## Installation
 
 ```
-ember install <%= addonName %>
+ember install <%= name %>
 ```
 
 ## Usage

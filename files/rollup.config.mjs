@@ -1,6 +1,5 @@
 import { babel } from '@rollup/plugin-babel';
-<% if (!isExistingMonorepo) { %>import copy from 'rollup-plugin-copy';
-<% } %>import { Addon } from '@embroider/addon-dev/rollup';
+import { Addon } from '@embroider/addon-dev/rollup';
 
 const addon = new Addon({
   srcDir: 'src',
@@ -63,12 +62,5 @@ export default {
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),
-<% if (!isExistingMonorepo) { %>
-    // Copy Readme and License into published package
-    copy({
-      targets: [
-<% filesToCopyFromRootToAddon.forEach((file) => { %>        { src: '<%= pathFromAddonToRoot %>/<%= file %>', dest: '.' },
-<% }); %>      ],
-    }),
-<% } %>  ],
+  ],
 };

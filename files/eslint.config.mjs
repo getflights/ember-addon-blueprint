@@ -18,29 +18,26 @@ import prettier from 'eslint-config-prettier';
 import ember from 'eslint-plugin-ember/recommended';
 import importPlugin from 'eslint-plugin-import';
 import n from 'eslint-plugin-n';
-import globals from 'globals';
-import ts from 'typescript-eslint';
+import globals from 'globals';<% if (typescript) { %>
+import ts from 'typescript-eslint';<% } %>
 
-const parserOptions = {
-  esm: {
-    js: {
-      ecmaFeatures: { modules: true },
-      ecmaVersion: 'latest',
-    },
-    ts: {
-      projectService: true,
-      project: true,
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
+const esmParserOptions = {
+  ecmaFeatures: { modules: true },
+  ecmaVersion: 'latest',
 };
-
-export default ts.config(
+<% if (typescript) { %>
+const tsParserOptions = {
+    projectService: true,
+    project: true,
+    tsconfigRootDir: import.meta.dirname,
+};
+<% } %>
+const config = [
   js.configs.recommended,
-  ember.configs.base,
-  ember.configs.gjs,
-  ember.configs.gts,
   prettier,
+  ember.configs.base,
+  ember.configs.gjs,<% if (typescript) { %>
+  ember.configs.gts,<% } %>
   /**
    * Ignores must be in their own object
    * https://eslint.org/docs/latest/use/configure/ignore
@@ -65,20 +62,20 @@ export default ts.config(
   {
     files: ['**/*.{js,gjs}'],
     languageOptions: {
-      parserOptions: parserOptions.esm.js,
+      parserOptions: esmParserOptions,
       globals: {
         ...globals.browser,
       },
     },
-  },
+  },<% if (typescript) { %>
   {
     files: ['**/*.{ts,gts}'],
     languageOptions: {
       parser: ember.parser,
-      parserOptions: parserOptions.esm.ts,
+      parserOptions: tsParserOptions,
     },
     extends: [...ts.configs.recommendedTypeChecked, ember.configs.gts],
-  },
+  },<% } %>
   {
     files: ['src/**/*'],
     plugins: {
@@ -124,10 +121,13 @@ export default ts.config(
     languageOptions: {
       sourceType: 'module',
       ecmaVersion: 'latest',
-      parserOptions: parserOptions.esm.js,
+      parserOptions: esmParserOptions,
       globals: {
         ...globals.node,
       },
     },
   },
-);
+];
+<% if (typescript) { %>
+export default ts.config(...config);<% } else { %>
+export default config;<% } %>
