@@ -1,10 +1,5 @@
 'use strict';
 
-const path = require('path');
-const fs = require('fs-extra');
-const sortPackageJson = require('sort-package-json');
-const normalizeEntityName = require('ember-cli-normalize-entity-name');
-
 let date = new Date();
 
 const description = 'The default blueprint for Embroider v2 addons.';
@@ -60,12 +55,6 @@ module.exports = {
     }
 
     return files;
-  },
-
-  normalizeEntityName(entityName) {
-    entityName = normalizeEntityName(entityName);
-
-    return entityName;
   },
 };
 
