@@ -1,6 +1,6 @@
 {
   "name": "@ember/addon-blueprint",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Blueprint for scaffolding ember v2 addons",
   "keywords": [
     "ember-blueprint"
@@ -11,10 +11,8 @@
   },
   "license": "MIT",
   "author": "",
-  "scripts": {
-  },
-  "dependencies": {
-  },
+  "scripts": {},
+  "dependencies": {},
   "devDependencies": {
     "release-plan": "^0.16.0"
   },
