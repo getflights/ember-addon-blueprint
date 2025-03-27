@@ -1,0 +1,22 @@
+{
+  "solution": {
+    "@ember/addon-blueprint": {
+      "impact": "minor",
+      "oldVersion": "0.0.0",
+      "newVersion": "0.1.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2025-03-27)\n\n* @ember/addon-blueprint 0.1.0 (minor)\n\n#### :rocket: Enhancement\n* `@ember/addon-blueprint`\n  * [#3](https://github.com/ember-cli/ember-addon-blueprint/pull/3) Import addon implementation (without testing) from @embroider/addon-blueprint ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `@ember/addon-blueprint`\n  * [#1](https://github.com/ember-cli/ember-addon-blueprint/pull/1) set up release plan ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+}
