@@ -4,7 +4,11 @@ const macros = buildMacros();
 
 module.exports = {
   plugins: [<% if (typescript) { %>
-    ['@babel/plugin-transform-typescript', { allowDeclareFields: true }],<% } %>
+    ['@babel/plugin-transform-typescript', {
+      allowDeclareFields: true,
+      onlyRemoveTypeImports: true,
+      allowDeclareFields: true,
+    }],<% } %>
     [
       'babel-plugin-ember-template-compilation',
       {
