@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-04-02)
+
+* @ember/addon-blueprint 0.2.0 (minor)
+
+#### :rocket: Enhancement
+* `@ember/addon-blueprint`
+  * [#7](https://github.com/ember-cli/ember-addon-blueprint/pull/7) add basic test app ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-03-27)
 
 * @ember/addon-blueprint 0.1.1 (patch)
