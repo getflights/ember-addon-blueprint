@@ -1,18 +1,18 @@
 {
   "solution": {
     "@ember/addon-blueprint": {
-      "impact": "patch",
-      "oldVersion": "0.1.0",
-      "newVersion": "0.1.1",
+      "impact": "minor",
+      "oldVersion": "0.1.1",
+      "newVersion": "0.2.0",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-03-27)\n\n* @ember/addon-blueprint 0.1.1 (patch)\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#4](https://github.com/ember-cli/ember-addon-blueprint/pull/4) fix release-plan use with pnpm ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2025-04-02)\n\n* @ember/addon-blueprint 0.2.0 (minor)\n\n#### :rocket: Enhancement\n* `@ember/addon-blueprint`\n  * [#7](https://github.com/ember-cli/ember-addon-blueprint/pull/7) add basic test app ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
