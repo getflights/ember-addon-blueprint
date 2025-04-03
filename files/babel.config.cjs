@@ -5,6 +5,7 @@ const macros = buildMacros();
 module.exports = {
   plugins: [<% if (typescript) { %>
     ['@babel/plugin-transform-typescript', {
+      allExtensions: true,
       allowDeclareFields: true,
       onlyRemoveTypeImports: true,
     }],<% } %>
