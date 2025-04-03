@@ -27,9 +27,9 @@ const esmParserOptions = {
 };
 <% if (typescript) { %>
 const tsParserOptions = {
-    projectService: true,
-    project: true,
-    tsconfigRootDir: import.meta.dirname,
+  projectService: true,
+  project: true,
+  tsconfigRootDir: import.meta.dirname,
 };
 <% } %>
 const config = [
