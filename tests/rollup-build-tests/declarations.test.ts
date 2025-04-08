@@ -21,7 +21,7 @@ describe(`declarations-configuration`, () => {
     await helper.setup();
     await helper.installDeps();
 
-    declarationsDir = path.join(helper.addonFolder, 'declarations');
+    declarationsDir = path.join(helper.projectRoot, 'declarations');
   });
 
   afterAll(async () => {
@@ -30,9 +30,9 @@ describe(`declarations-configuration`, () => {
 
   describe('rootDir', () => {
     it('there are no top-level files, only nested in folders', async () => {
-      await fse.rm(path.join(helper.addonFolder, 'src'), { recursive: true });
-      await fse.mkdirp(path.join(helper.addonFolder, 'src/components'));
-      await fs.writeFile(path.join(helper.addonFolder, 'src/components/example.ts'), '/* empty file */');
+      await fse.rm(path.join(helper.projectRoot, 'src'), { recursive: true });
+      await fse.mkdirp(path.join(helper.projectRoot, 'src/components'));
+      await fs.writeFile(path.join(helper.projectRoot, 'src/components/example.ts'), '/* empty file */');
 
       let buildResult = await helper.build();
 
