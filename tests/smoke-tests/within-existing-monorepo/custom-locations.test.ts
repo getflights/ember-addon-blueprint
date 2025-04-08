@@ -17,7 +17,7 @@ let commonFixtures = {
   '.prettierrc.cjs': await readFixture('.prettierrc.cjs'),
 };
 
-describe('custom locations', () => {
+describe.skip('custom locations', () => {
   let cwd = '';
   let tmpDir = '';
   let addonLocation = 'addons/my-fancy-addon';

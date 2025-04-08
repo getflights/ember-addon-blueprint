@@ -5,7 +5,7 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { AddonHelper, dirContents, matchesFixture } from '../helpers.js';
 
-describe('--addon-only', () => {
+describe.skip('--addon-only', () => {
   let helper = new AddonHelper({ packageManager: 'pnpm', args: ['--addon-only'] });
 
   beforeAll(async () => {

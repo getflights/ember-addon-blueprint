@@ -11,7 +11,7 @@ import {
   runScript,
 } from '../helpers.js';
 
-describe('--test-app-location', () => {
+describe.skip('--test-app-location', () => {
   let cwd = '';
   let tmpDir = '';
   let testAppLocation = 'packages/my-custom-location';

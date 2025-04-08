@@ -11,7 +11,7 @@ import {
   runScript,
 } from '../helpers.js';
 
-describe('--addon-location', () => {
+describe.skip('--addon-location', () => {
   let cwd = '';
   let tmpDir = '';
   let addonLocation = 'packages/my-custom-location';

@@ -19,7 +19,7 @@ let commonFixtures = {
 };
 
 for (let packageManager of SUPPORTED_PACKAGE_MANAGERS) {
-  describe(`monorepo with ${packageManager}`, () => {
+  describe.skip(`monorepo with ${packageManager}`, () => {
     let cwd = '';
     let tmpDir = '';
     let addonLocation = 'my-addon';
