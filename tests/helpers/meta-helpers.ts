@@ -24,15 +24,14 @@ export class AddonHelper {
   #projectRoot?: string;
   #tmpDir?: string;
   #scenario: string;
-  #packageManager: 'npm' | 'pnpm' | 'yarn';
-  #addonFolder?: string;
+  #packageManager: 'npm' | 'pnpm';
   #args: string[];
   #fixtures: AddonFixtureHelper | undefined;
 
   constructor(options: {
     args?: string[];
     scenario?: string;
-    packageManager: 'pnpm' | 'npm' | 'yarn';
+    packageManager: 'pnpm' | 'npm';
   }) {
     this.#args = options.args || [];
     this.#scenario = options.scenario || 'default';
@@ -65,7 +64,6 @@ export class AddonHelper {
 
     // this is the project root
     this.#projectRoot = path.join(this.#tmpDir, name);
-    this.#addonFolder = path.join(this.#projectRoot, name);
 
     this.#fixtures = new AddonFixtureHelper({ cwd: this.#projectRoot, scenario: this.#scenario });
   }
@@ -113,12 +111,6 @@ export class AddonHelper {
     assert(this.#fixtures, 'Cannot get fixtures-helper. Was the Addon Helper `setup`?');
 
     return this.#fixtures;
-  }
-
-  get addonFolder() {
-    assert(this.#addonFolder, 'Cannot get addon folder. Was the Addon Helper `setup`?');
-
-    return this.#addonFolder;
   }
 }
 

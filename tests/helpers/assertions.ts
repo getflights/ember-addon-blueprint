@@ -15,7 +15,7 @@ interface AssertGeneratedOptions {
   testAppLocation?: string;
   testAppName?: string;
   expectedStaticFiles?: string[];
-  packageManager?: 'npm' | 'yarn' | 'pnpm';
+  packageManager?: string;
   typeScript?: boolean;
   existingMonorepo?: boolean;
 }
@@ -35,27 +35,10 @@ export async function assertGeneratedCorrectly({
   typeScript = false,
   existingMonorepo = false,
 }: AssertGeneratedOptions) {
-  let addonPath = path.join(projectRoot, addonLocation ?? 'my-addon');
-  let testAppPath = path.join(projectRoot, testAppLocation ?? 'test-app');
-
+  let addonPath = path.join(projectRoot);
   expect(await fse.pathExists(addonPath), `${addonPath} exists`).toBe(true);
-  expect(await fse.pathExists(testAppPath), `${testAppPath} exists`).toBe(true);
-
   let addonPackageJson = await packageJsonAt(addonPath);
-  let testAppPackageJson = await packageJsonAt(testAppPath);
-
   expect(addonPackageJson.name, `addon has correct name: ${addonName}`).toEqual(addonName);
-  expect(testAppPackageJson.name, `testApp has correct name: ${testAppName ?? 'test-app'}`).toEqual(
-    testAppName ?? 'test-app',
-  );
-
-  expect(
-    [
-      ...Object.keys(testAppPackageJson.dependencies || {}),
-      ...Object.keys(testAppPackageJson.devDependencies || {}),
-    ],
-    `The test app has a (dev)dependency on the addon`,
-  ).to.include(addonName);
 
   for (let expectedFile of expectedStaticFiles) {
     let pathToFile = path.join(addonPath, expectedFile);
@@ -84,7 +67,7 @@ interface AssertECUOptions {
   addonLocation?: string;
   testAppLocation?: string;
   testAppName?: string;
-  packageManager: 'npm' | 'yarn' | 'pnpm';
+  packageManager: string;
   typeScript: boolean;
 }
 
@@ -105,11 +88,11 @@ export async function assertCorrectECUJson({
   expect(json.projectName).toEqual(addonName);
   expect(json.packages).toHaveLength(1);
 
-  expect(json.packages[0].name).toEqual('@embroider/addon-blueprint');
+  expect(json.packages[0].name).toEqual('@ember/addon-blueprint');
   expect(json.packages[0].version).toEqual(ownPkg.version);
 
   expect(json.packages[0].blueprints).toHaveLength(1);
-  expect(json.packages[0].blueprints[0].name).toEqual('@embroider/addon-blueprint');
+  expect(json.packages[0].blueprints[0].name).toEqual('@ember/addon-blueprint');
 
   if (packageManager !== 'npm') {
     expect(json.packages[0].blueprints[0].options).toContain(`--${packageManager}`);
