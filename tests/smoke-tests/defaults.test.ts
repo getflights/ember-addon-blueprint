@@ -4,6 +4,7 @@ import tmp from 'tmp-promise';
 let localEmberCli = require.resolve('ember-cli/bin/ember');
 import { beforeAll, describe, expect, it } from 'vitest';
 import {execa } from 'execa';
+import fixturify from 'fixturify';
 
 const blueprintPath = path.join(__dirname, '../..');
 
@@ -91,34 +92,42 @@ for (let packageManager of SUPPORTED_PACKAGE_MANAGERS) {
       expect(exitCode).toEqual(0);
     });
 
-    it.skip('build and test ', async () => {
-      // Copy over fixtures
-      await helper.fixtures.use('./my-addon/src/components');
-      await helper.fixtures.use('./test-app/tests');
+    it('build and test', async () => {
+      let addonFixture = fixturify.readSync('./fixtures/addon');
+      fixturify.writeSync(join(addonDir, 'src'), addonFixture);
+
+      let testFixture = fixturify.readSync('./fixtures/rendering-tests');
+      fixturify.writeSync(join(addonDir, 'tests/rendering'), testFixture);
 
       // Ensure that we have no lint errors.
       // It's important to keep this along with the tests,
       // so that we can have confidence that the lints aren't destructively changing
       // the files in a way that would break consumers
-      let { exitCode } = await helper.run('lint:fix');
+      let { exitCode } = await execa({cwd: addonDir})`${packageManager} run lint:fix`;
 
       expect(exitCode).toEqual(0);
 
-      let buildResult = await helper.build();
+      let buildResult = await execa({cwd: addonDir})`${packageManager} run build`;
 
       expect(buildResult.exitCode).toEqual(0);
 
-      let contents = await dirContents(distDir);
+      let contents = await dirContents(join(addonDir, 'dist'));
 
       expect(contents).to.deep.equal(['_app_', 'components', 'index.js', 'index.js.map']);
 
-      let testResult = await helper.run('test:ember');
+      let testResult = await await execa({cwd: addonDir})`${packageManager} run test`;
 
       expect(testResult.exitCode).toEqual(0);
 
-      expect(testResult.stdout).to.include('# tests 4');
-      expect(testResult.stdout).to.include('# pass  4');
-      expect(testResult.stdout).to.include('# fail  0');
+      expect(testResult.stdout).includes(`# tests 2
+# pass  2
+# skip  0
+# todo  0
+# fail  0
+
+# ok`, testResult.stdout);
+      
+      
     });
   });
 }
