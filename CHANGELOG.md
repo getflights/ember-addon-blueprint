@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2025-04-09)
+
+* @ember/addon-blueprint 0.4.0 (minor)
+
+#### :rocket: Enhancement
+* `@ember/addon-blueprint`
+  * [#28](https://github.com/ember-cli/ember-addon-blueprint/pull/28) Unskip build test - make sure test work out of the box ([@mansona](https://github.com/mansona))
+
+#### :bug: Bug Fix
+* `@ember/addon-blueprint`
+  * [#26](https://github.com/ember-cli/ember-addon-blueprint/pull/26) Import tests from @embroider/addon-blueprint ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-04-03)
 
 * @ember/addon-blueprint 0.3.0 (minor)
