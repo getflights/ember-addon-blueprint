@@ -91,10 +91,10 @@ const config = [
    */
   {
     files: [
+      '*.cjs',
       '**/*.cjs',
-      '.prettierrc.js',
-      '.stylelintrc.js',
-      '.template-lintrc.js',
+      '.prettierrc.cjs',
+      '.template-lintrc.cjs',
       'addon-main.cjs',
     ],
     plugins: {
