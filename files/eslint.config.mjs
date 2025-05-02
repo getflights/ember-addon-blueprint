@@ -91,7 +91,6 @@ const config = [
    */
   {
     files: [
-      '*.cjs',
       '**/*.cjs',
       '.prettierrc.cjs',
       '.template-lintrc.cjs',
