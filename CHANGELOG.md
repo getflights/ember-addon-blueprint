@@ -1,5 +1,18 @@
 # Changelog
 
+## Release (2025-05-04)
+
+* @ember/addon-blueprint 0.5.0 (minor)
+
+#### :rocket: Enhancement
+* `@ember/addon-blueprint`
+  * [#32](https://github.com/ember-cli/ember-addon-blueprint/pull/32) Rename testem.js -> testem.cjs ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#31](https://github.com/ember-cli/ember-addon-blueprint/pull/31) Simplify tsconfig ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#30](https://github.com/ember-cli/ember-addon-blueprint/pull/30) Split out Lint to its own job ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-04-09)
 
 * @ember/addon-blueprint 0.4.0 (minor)
