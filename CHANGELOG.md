@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-05-10)
+
+* @ember/addon-blueprint 0.5.1 (patch)
+
+#### :bug: Bug Fix
+* `@ember/addon-blueprint`
+  * [#35](https://github.com/ember-cli/ember-addon-blueprint/pull/35) Remove ember-source as a peer dependency ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-05-04)
 
 * @ember/addon-blueprint 0.5.0 (minor)
