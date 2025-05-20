@@ -1,5 +1,22 @@
 # Changelog
 
+## Release (2025-05-20)
+
+* @ember/addon-blueprint 0.5.2 (patch)
+
+#### :bug: Bug Fix
+* `@ember/addon-blueprint`
+  * [#40](https://github.com/ember-cli/ember-addon-blueprint/pull/40) Update eslint-config-prettier ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#39](https://github.com/ember-cli/ember-addon-blueprint/pull/39) Update globals ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#38](https://github.com/ember-cli/ember-addon-blueprint/pull/38) update ember-template-lint ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* `@ember/addon-blueprint`
+  * [#43](https://github.com/ember-cli/ember-addon-blueprint/pull/43) Add support for WRITE_FIXTURES=true when working with fixture-tests ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-05-10)
 
 * @ember/addon-blueprint 0.5.1 (patch)
