@@ -44,6 +44,25 @@ export async function readFixture(
   return contents.toString();
 }
 
+export async function writeFixture(
+  /**
+   * Which file within in the fixture-set / scenario to read
+   */
+  file: string, 
+  contents: string,
+  options?: { 
+    /**
+     * Which fixture set to use
+     */
+  scenario?: string }) {
+
+
+  let scenario = options?.scenario ?? 'default';
+  let fixtureFilePath = path.isAbsolute(file) ? file : path.join(fixturesPath, scenario, file);
+
+  await fs.writeFile(fixtureFilePath, contents);
+}
+
 export async function copyFixture(
   /**
    * Which file within the fixture-set / scenario to copy

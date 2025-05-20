@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import fse from 'fs-extra';
 import { expect } from 'vitest';
 
-import { readFixture } from './fixtures.js';
+import { readFixture, writeFixture } from './fixtures.js';
 import { packageJsonAt } from './utils.js';
 
 interface AssertGeneratedOptions {
@@ -162,6 +162,12 @@ export async function matchesFixture(
   }
 
   let sourceContents = (await fs.readFile(testFilePath)).toString();
+
+  if (process.env.WRITE_FIXTURES) {
+    console.info(`Writing fixture: ${fixtureFile} in  scenario: ${scenario}`);
+    await writeFixture(fixtureFile, sourceContents, { scenario });
+  }
+
   let fixtureContents = await readFixture(fixtureFile, { scenario });
 
   /**
