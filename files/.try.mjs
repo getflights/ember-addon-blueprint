@@ -36,10 +36,6 @@ module.exports = async function (defaults) {
 }
 
 function compatEmberScenario(name, emberVersion) {
-  // older LTSs would also need the compat configuration
-  let needsCompat = ['5.4.0', '4.12.0'];
-  let needsBabelComat = needsCompat.some((v) => emberVersion.includes(v));
-
   return {
     name,
     npm: {
@@ -56,7 +52,6 @@ function compatEmberScenario(name, emberVersion) {
     },
     files: {
       'ember-cli-build.js': emberCliBuildJS(),
-      ...(needsBabelComat ? { 'babel.config.cjs': compatBabel() } : {}),
       'config/optional-features.json': JSON.stringify({
         'application-template-wrapper': false,
         'default-async-observers': true,
