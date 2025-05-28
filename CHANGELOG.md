@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2025-05-27)
+
+* @ember/addon-blueprint 0.5.3 (patch)
+
+#### :bug: Bug Fix
+* `@ember/addon-blueprint`
+  * [#45](https://github.com/ember-cli/ember-addon-blueprint/pull/45) Set headless=new ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* `@ember/addon-blueprint`
+  * [#44](https://github.com/ember-cli/ember-addon-blueprint/pull/44) Add prettier so our PRs don't have accidental changes ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-05-20)
 
 * @ember/addon-blueprint 0.5.2 (patch)

@@ -2,8 +2,8 @@
   "solution": {
     "@ember/addon-blueprint": {
       "impact": "patch",
-      "oldVersion": "0.5.1",
-      "newVersion": "0.5.2",
+      "oldVersion": "0.5.2",
+      "newVersion": "0.5.3",
       "tagName": "latest",
       "constraints": [
         {
@@ -18,5 +18,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-05-20)\n\n* @ember/addon-blueprint 0.5.2 (patch)\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#40](https://github.com/ember-cli/ember-addon-blueprint/pull/40) Update eslint-config-prettier ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#39](https://github.com/ember-cli/ember-addon-blueprint/pull/39) Update globals ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#38](https://github.com/ember-cli/ember-addon-blueprint/pull/38) update ember-template-lint ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `@ember/addon-blueprint`\n  * [#43](https://github.com/ember-cli/ember-addon-blueprint/pull/43) Add support for WRITE_FIXTURES=true when working with fixture-tests ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-05-27)\n\n* @ember/addon-blueprint 0.5.3 (patch)\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#45](https://github.com/ember-cli/ember-addon-blueprint/pull/45) Set headless=new ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `@ember/addon-blueprint`\n  * [#44](https://github.com/ember-cli/ember-addon-blueprint/pull/44) Add prettier so our PRs don't have accidental changes ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
