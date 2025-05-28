@@ -1,4 +1,5 @@
 import path, { join } from 'node:path';
+import fs from 'node:fs/promises';
 
 import tmp from 'tmp-promise';
 let localEmberCli = require.resolve('ember-cli/bin/ember');
@@ -17,6 +18,14 @@ import {
 } from '../helpers.js';
 import { existsSync } from 'node:fs';
 
+/**
+ * NOTE: tests run sequentially
+ *       we need to manually specify "concurrent" to run them in parallel
+ *
+ *       https://vitest.dev/guide/features.html#running-tests-concurrently
+ *
+ *       This is important because we delete stuff in one test that was created in another
+ */
 for (let packageManager of SUPPORTED_PACKAGE_MANAGERS) {
   describe(`defaults with ${packageManager}`, () => {
     let tmpDir: string;
@@ -94,7 +103,17 @@ for (let packageManager of SUPPORTED_PACKAGE_MANAGERS) {
       expect(exitCode).toEqual(0);
     });
 
-    it('build and test', async () => {
+    it('build', async () => {
+      let buildResult = await execa({ cwd: addonDir })`${packageManager} run build`;
+
+      expect(buildResult.exitCode).toEqual(0);
+
+      let contents = await dirContents(join(addonDir, 'dist'));
+
+      expect(contents).to.deep.equal(['_app_', 'components', 'index.js', 'index.js.map']);
+    });
+
+    it('lint:fix', () => {
       let addonFixture = fixturify.readSync('./fixtures/addon');
       fixturify.writeSync(join(addonDir, 'src'), addonFixture);
 
@@ -108,16 +127,13 @@ for (let packageManager of SUPPORTED_PACKAGE_MANAGERS) {
       let { exitCode } = await execa({ cwd: addonDir })`${packageManager} run lint:fix`;
 
       expect(exitCode).toEqual(0);
+    });
 
-      let buildResult = await execa({ cwd: addonDir })`${packageManager} run build`;
+    it('test', async () => {
+      // It's important that we ensure that dist directory is empty for this test, because
+      await fs.rm(join(addonDir, 'dist'), { recursive: true, force: true });
 
-      expect(buildResult.exitCode).toEqual(0);
-
-      let contents = await dirContents(join(addonDir, 'dist'));
-
-      expect(contents).to.deep.equal(['_app_', 'components', 'index.js', 'index.js.map']);
-
-      let testResult = await await execa({ cwd: addonDir })`${packageManager} run test`;
+      let testResult = await execa({ cwd: addonDir })`${packageManager} run test`;
 
       expect(testResult.exitCode).toEqual(0);
 
