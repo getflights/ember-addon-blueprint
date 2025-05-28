@@ -113,7 +113,7 @@ for (let packageManager of SUPPORTED_PACKAGE_MANAGERS) {
       expect(contents).to.deep.equal(['_app_', 'components', 'index.js', 'index.js.map']);
     });
 
-    it('lint:fix', () => {
+    it('lint:fix', async () => {
       let addonFixture = fixturify.readSync('./fixtures/addon');
       fixturify.writeSync(join(addonDir, 'src'), addonFixture);
 
