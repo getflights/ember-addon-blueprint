@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, defaultClientConditions } from 'vite';
 import { extensions, ember, classicEmberSupport } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 
@@ -20,5 +20,8 @@ export default defineConfig({
         tests: 'tests/index.html',
       },
     },
+  },
+  resolve: {
+    conditions: ['addon-dev', ...defaultClientConditions],
   },
 });

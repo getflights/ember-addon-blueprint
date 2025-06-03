@@ -83,15 +83,23 @@
   },
   "exports": {<% if (typescript) { %>
     ".": {
+      "addon-dev": "./src/index.ts",
       "types": "./declarations/index.d.ts",
       "default": "./dist/index.js"
     },
     "./*": {
+      "addon-dev": ["./src/*.ts", "./src/*.gts"],
       "types": "./declarations/*.d.ts",
       "default": "./dist/*.js"
     },<% } else { %>
-    ".": "./dist/index.js",
-    "./*": "./dist/*.js",<% } %>
+    ".": {
+      "addon-dev": "./src/index.js",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "addon-dev": ["./src/*.js", "./src/*.gjs"],
+      "default": "./dist/*.js"
+    },<% } %>
     "./addon-main.js": "./addon-main.cjs"
   }<% if (typescript) { %>,
   "typesVersions": {
