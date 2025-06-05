@@ -1,22 +1,22 @@
 {
   "solution": {
     "@ember/addon-blueprint": {
-      "impact": "patch",
-      "oldVersion": "0.5.2",
-      "newVersion": "0.5.3",
+      "impact": "minor",
+      "oldVersion": "0.5.3",
+      "newVersion": "0.6.0",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         },
         {
           "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-05-27)\n\n* @ember/addon-blueprint 0.5.3 (patch)\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#45](https://github.com/ember-cli/ember-addon-blueprint/pull/45) Set headless=new ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `@ember/addon-blueprint`\n  * [#44](https://github.com/ember-cli/ember-addon-blueprint/pull/44) Add prettier so our PRs don't have accidental changes ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-06-05)\n\n* @ember/addon-blueprint 0.6.0 (minor)\n\n#### :rocket: Enhancement\n* `@ember/addon-blueprint`\n  * [#41](https://github.com/ember-cli/ember-addon-blueprint/pull/41) Support scenario testing ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#47](https://github.com/ember-cli/ember-addon-blueprint/pull/47) Add package.json#imports ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#48](https://github.com/ember-cli/ember-addon-blueprint/pull/48) Split build and test tests & fix self-imports (which splitting the tests proved the existence of a bug) ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
