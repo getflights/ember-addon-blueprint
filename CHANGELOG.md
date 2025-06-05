@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2025-06-05)
+
+* @ember/addon-blueprint 0.6.0 (minor)
+
+#### :rocket: Enhancement
+* `@ember/addon-blueprint`
+  * [#41](https://github.com/ember-cli/ember-addon-blueprint/pull/41) Support scenario testing ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#47](https://github.com/ember-cli/ember-addon-blueprint/pull/47) Add package.json#imports ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :bug: Bug Fix
+* `@ember/addon-blueprint`
+  * [#48](https://github.com/ember-cli/ember-addon-blueprint/pull/48) Split build and test tests & fix self-imports (which splitting the tests proved the existence of a bug) ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-05-27)
 
 * @ember/addon-blueprint 0.5.3 (patch)
