@@ -10,7 +10,6 @@ import fixturify from 'fixturify';
 const blueprintPath = path.join(__dirname, '../..');
 
 import {
-  AddonHelper,
   assertGeneratedCorrectly,
   dirContents,
   matchesFixture,
