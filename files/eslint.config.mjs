@@ -43,7 +43,7 @@ const config = [
    * https://eslint.org/docs/latest/use/configure/ignore
    */
   {
-    ignores: ['dist/', 'declarations/', 'node_modules/', 'coverage/', '!**/.*'],
+    ignores: ['dist/', 'dist-*/', 'declarations/', 'node_modules/', 'coverage/', '!**/.*'],
   },
   /**
    * https://eslint.org/docs/latest/use/configure/configuration-files#configuring-linter-options
