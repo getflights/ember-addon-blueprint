@@ -9,10 +9,8 @@ const addon = new Addon({
 });
 
 const rootDirectory = dirname(fileURLToPath(import.meta.url));
-const configs = {
-  babel: resolve(rootDirectory, './babel.publish.config.cjs'),<% if (typescript) { %>
-  ts: resolve(rootDirectory, './tsconfig.publish.json'),<% } %>
-};
+const babelConfig = resolve(rootDirectory, './babel.publish.config.cjs');<% if (typescript) { %>
+const tsConfig = resolve(rootDirectory, './tsconfig.publish.json');<% } %>
 
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
@@ -53,7 +51,7 @@ export default {
     babel({
       extensions: ['.js', '.gjs'<% if (typescript) { %>, '.ts', '.gts'<% } %>],
       babelHelpers: 'bundled',
-      configFile: configs.babel,
+      configFile: babelConfig,
     }),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.
@@ -65,8 +63,8 @@ export default {
     // Emit .d.ts declaration files
     addon.declarations(
       'declarations',<% if (packageManager === 'pnpm') { %>
-      `pnpm glint --declaration --project ${configs.ts}`,<% } else { %>
-      `npm exec glint -- --declaration --project ${configs.ts}`,<% } %>
+      `pnpm glint --declaration --project ${tsConfig}`,<% } else { %>
+      `npm exec glint -- --declaration --project ${tsConfig}`,<% } %>
     ),<% } %>
 
     // addons are allowed to contain imports of .css files, which we want rollup
