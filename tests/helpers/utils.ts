@@ -4,6 +4,7 @@ import assert from 'node:assert';
 import path from 'node:path';
 import { $ } from 'execa';
 import { fileURLToPath } from 'node:url';
+import { globby } from 'globby';
 
 import { execa, type Options } from 'execa';
 
@@ -103,6 +104,18 @@ export async function runScript({
     console.error(e);
 
     return promise;
+  }
+}
+
+export async function filesMatching(glob: string, dirPath: string) {
+  try {
+    let files = await globby(glob, { cwd: dirPath });
+
+    return files;
+  } catch (e) {
+    console.error('error', e);
+
+    return [];
   }
 }
 
