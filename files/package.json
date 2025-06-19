@@ -38,19 +38,22 @@
     "@babel/plugin-transform-typescript": "^7.25.2",<% } %>
     "@babel/runtime": "^7.25.6",
     "@ember/test-helpers": "^5.2.1",
-    "@embroider/addon-dev": "^8.0.1",
+    "@embroider/addon-dev": "^8.1.0",
     "@embroider/core": "^4.1.0",
     "@embroider/compat": "^4.1.0",
     "@embroider/macros": "^1.18.0",
     "@embroider/vite": "^1.1.5",
     "@eslint/js": "^9.17.0",
     "@glimmer/component": "^2.0.0",<% if (typescript) { %>
-    "@glint/core": "^1.4.0",
-    "@glint/environment-ember-loose": "^1.4.0",
-    "@glint/environment-ember-template-imports": "^1.4.0",
-    "@glint/template": "^1.4.0",
+    "@glint/core": "^2.0.0-alpha.2",
+    "@glint/environment-ember-loose": "^2.0.0-alpha.2",
+    "@glint/environment-ember-template-imports": "^2.0.0-alpha.2",
+    "@glint/tsserver-plugin": "^2.0.0-alpha.2",
+    "@glint/template": "^1.6.0-alpha.1",
+    "@ember/app-tsconfig": "^1.0.0",
     "@ember/library-tsconfig": "^1.0.0",<% } %>
-    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-babel": "^6.0.4",<% if (typescript) { %>
+    "@types/qunit": "^2.19.12",<% } %>
     "babel-plugin-ember-template-compilation": "^2.2.5",
     "concurrently": "^9.0.1",
     "ember-qunit": "^9.0.2",
@@ -70,7 +73,7 @@
     "rollup": "^4.22.5",
     "testem": "^3.15.1",<% if (typescript) { %>
     "typescript-eslint": "^8.19.1",
-    "typescript": "~5.6.0",<% } %>
+    "typescript": "~5.8.3",<% } %>
     "vite": "^6.2.4"
   },
   "ember": {

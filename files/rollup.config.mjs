@@ -8,6 +8,10 @@ const addon = new Addon({
   destDir: 'dist',
 });
 
+const rootDirectory = dirname(fileURLToPath(import.meta.url));
+const babelConfig = resolve(rootDirectory, './babel.publish.config.cjs');<% if (typescript) { %>
+const tsConfig = resolve(rootDirectory, './tsconfig.publish.json');<% } %>
+
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
   // You can augment this if you need to.
@@ -47,10 +51,7 @@ export default {
     babel({
       extensions: ['.js', '.gjs'<% if (typescript) { %>, '.ts', '.gts'<% } %>],
       babelHelpers: 'bundled',
-      configFile: resolve(
-        dirname(fileURLToPath(import.meta.url)),
-        './babel.publish.config.cjs',
-      ),
+      configFile: babelConfig,
     }),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.
@@ -60,7 +61,10 @@ export default {
     addon.gjs(),<% if (typescript) { %>
 
     // Emit .d.ts declaration files
-    addon.declarations('declarations'),<% } %>
+    addon.declarations(
+      'declarations',
+      `npx glint --declaration --project ${tsConfig}`,
+    ),<% } %>
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.
