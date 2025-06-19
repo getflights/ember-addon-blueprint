@@ -2,21 +2,17 @@
   "solution": {
     "@ember/addon-blueprint": {
       "impact": "minor",
-      "oldVersion": "0.6.0",
-      "newVersion": "0.7.0",
+      "oldVersion": "0.7.0",
+      "newVersion": "0.8.0",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "minor",
           "reason": "Appears in changelog section :rocket: Enhancement"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-06-19)\n\n* @ember/addon-blueprint 0.7.0 (minor)\n\n#### :rocket: Enhancement\n* `@ember/addon-blueprint`\n  * [#55](https://github.com/ember-cli/ember-addon-blueprint/pull/55) Fix TS support, allowing type-checking in tests ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#59](https://github.com/ember-cli/ember-addon-blueprint/pull/59) Configure ember-template-lint to not check hbs literals in tests ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#57](https://github.com/ember-cli/ember-addon-blueprint/pull/57) Tests should use different output directory as to not troll the library author ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-06-19)\n\n* @ember/addon-blueprint 0.8.0 (minor)\n\n#### :rocket: Enhancement\n* `@ember/addon-blueprint`\n  * [#50](https://github.com/ember-cli/ember-addon-blueprint/pull/50) Remove functions from the try file ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
