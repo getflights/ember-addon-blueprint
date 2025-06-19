@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2025-06-19)
+
+* @ember/addon-blueprint 0.7.0 (minor)
+
+#### :rocket: Enhancement
+* `@ember/addon-blueprint`
+  * [#55](https://github.com/ember-cli/ember-addon-blueprint/pull/55) Fix TS support, allowing type-checking in tests ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#59](https://github.com/ember-cli/ember-addon-blueprint/pull/59) Configure ember-template-lint to not check hbs literals in tests ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :bug: Bug Fix
+* `@ember/addon-blueprint`
+  * [#57](https://github.com/ember-cli/ember-addon-blueprint/pull/57) Tests should use different output directory as to not troll the library author ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-06-05)
 
 * @ember/addon-blueprint 0.6.0 (minor)
