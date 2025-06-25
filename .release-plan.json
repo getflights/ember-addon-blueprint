@@ -1,18 +1,18 @@
 {
   "solution": {
     "@ember/addon-blueprint": {
-      "impact": "minor",
-      "oldVersion": "0.7.0",
-      "newVersion": "0.8.0",
+      "impact": "patch",
+      "oldVersion": "0.8.0",
+      "newVersion": "0.8.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-06-19)\n\n* @ember/addon-blueprint 0.8.0 (minor)\n\n#### :rocket: Enhancement\n* `@ember/addon-blueprint`\n  * [#50](https://github.com/ember-cli/ember-addon-blueprint/pull/50) Remove functions from the try file ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2025-06-25)\n\n* @ember/addon-blueprint 0.8.1 (patch)\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#62](https://github.com/ember-cli/ember-addon-blueprint/pull/62) Add vite test mode ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }
