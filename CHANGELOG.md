@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-06-25)
+
+* @ember/addon-blueprint 0.8.1 (patch)
+
+#### :bug: Bug Fix
+* `@ember/addon-blueprint`
+  * [#62](https://github.com/ember-cli/ember-addon-blueprint/pull/62) Add vite test mode ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-06-19)
 
 * @ember/addon-blueprint 0.8.0 (minor)
