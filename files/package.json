@@ -97,6 +97,7 @@
       "default": "./dist/*.js"
     },<% } else { %>
     ".": "./dist/index.js",
+    "./*.css": "./dist/*.css",
     "./*": "./dist/*.js",<% } %>
     "./addon-main.js": "./addon-main.cjs"
   }<% if (typescript) { %>,
