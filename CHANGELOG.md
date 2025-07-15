@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-07-15)
+
+* @ember/addon-blueprint 0.9.0 (minor)
+
+#### :rocket: Enhancement
+* `@ember/addon-blueprint`
+  * [#69](https://github.com/ember-cli/ember-addon-blueprint/pull/69) allow plain css imports ootb ([@void-mAlex](https://github.com/void-mAlex))
+
+#### Committers: 1
+- Alex ([@void-mAlex](https://github.com/void-mAlex))
+
 ## Release (2025-07-02)
 
 * @ember/addon-blueprint 0.8.2 (patch)
