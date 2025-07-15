@@ -1,18 +1,18 @@
 {
   "solution": {
     "@ember/addon-blueprint": {
-      "impact": "patch",
-      "oldVersion": "0.8.1",
-      "newVersion": "0.8.2",
+      "impact": "minor",
+      "oldVersion": "0.8.2",
+      "newVersion": "0.9.0",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-07-02)\n\n* @ember/addon-blueprint 0.8.2 (patch)\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#67](https://github.com/ember-cli/ember-addon-blueprint/pull/67) Update test-helper.__ext__ to have the imports at the top ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#64](https://github.com/ember-cli/ember-addon-blueprint/pull/64) Change test mode to development mode ([@gossi](https://github.com/gossi))\n\n#### Committers: 2\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-07-15)\n\n* @ember/addon-blueprint 0.9.0 (minor)\n\n#### :rocket: Enhancement\n* `@ember/addon-blueprint`\n  * [#69](https://github.com/ember-cli/ember-addon-blueprint/pull/69) allow plain css imports ootb ([@void-mAlex](https://github.com/void-mAlex))\n\n#### Committers: 1\n- Alex ([@void-mAlex](https://github.com/void-mAlex))\n"
 }
