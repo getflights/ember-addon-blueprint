@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-08-13)
+
+* @ember/addon-blueprint 0.9.1 (patch)
+
+#### :bug: Bug Fix
+* `@ember/addon-blueprint`
+  * [#71](https://github.com/ember-cli/ember-addon-blueprint/pull/71) Add @ember/test-waiters ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2025-07-15)
 
 * @ember/addon-blueprint 0.9.0 (minor)
