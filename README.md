@@ -8,7 +8,7 @@ this blog post [Migrating an Ember addon to the next-gen v2 format
 
 ## WIP
 
-This is still work in progress but we are aiming for this to be the new default for when someone generates an addon with `ember addon super-addon-name`. This will need an RFC to change the default but if you notice anything that you would like to be imporoved with this blueprint please open an issue to discuss, you don't need to wait for the RFC process to give us feedback. 
+This is still work in progress but we are aiming for this to be the new default for when someone generates an addon with `ember addon super-addon-name`. This will need an RFC to change the default but if you notice anything that you would like to be improved with this blueprint please open an issue to discuss, you don't need to wait for the RFC process to give us feedback. 
 
 ## Usage
 
