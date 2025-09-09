@@ -1,18 +1,26 @@
 {
   "solution": {
     "@ember/addon-blueprint": {
-      "impact": "patch",
-      "oldVersion": "0.9.0",
-      "newVersion": "0.9.1",
+      "impact": "minor",
+      "oldVersion": "0.9.1",
+      "newVersion": "0.10.0",
       "tagName": "latest",
       "constraints": [
         {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :memo: Documentation"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-08-13)\n\n* @ember/addon-blueprint 0.9.1 (patch)\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#71](https://github.com/ember-cli/ember-addon-blueprint/pull/71) Add @ember/test-waiters ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2025-09-09)\n\n* @ember/addon-blueprint 0.10.0 (minor)\n\n#### :rocket: Enhancement\n* `@ember/addon-blueprint`\n  * [#79](https://github.com/ember-cli/ember-addon-blueprint/pull/79) Use Node v22 LTS ([@bertdeblock](https://github.com/bertdeblock))\n\n#### :bug: Bug Fix\n* `@ember/addon-blueprint`\n  * [#80](https://github.com/ember-cli/ember-addon-blueprint/pull/80) Sort `devDependencies` in generated `package.json` file ([@bertdeblock](https://github.com/bertdeblock))\n  * [#78](https://github.com/ember-cli/ember-addon-blueprint/pull/78) Remove root `package-lock.json` file ([@bertdeblock](https://github.com/bertdeblock))\n  * [#77](https://github.com/ember-cli/ember-addon-blueprint/pull/77) Remove unnecessary backticks in `.try.mjs` file ([@bertdeblock](https://github.com/bertdeblock))\n\n#### :memo: Documentation\n* `@ember/addon-blueprint`\n  * [#75](https://github.com/ember-cli/ember-addon-blueprint/pull/75) Fix typo in README WIP section ([@evoactivity](https://github.com/evoactivity))\n\n#### Committers: 2\n- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))\n- Liam Potter ([@evoactivity](https://github.com/evoactivity))\n"
 }
