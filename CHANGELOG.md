@@ -1,5 +1,27 @@
 # Changelog
 
+## Release (2025-09-09)
+
+* @ember/addon-blueprint 0.10.0 (minor)
+
+#### :rocket: Enhancement
+* `@ember/addon-blueprint`
+  * [#79](https://github.com/ember-cli/ember-addon-blueprint/pull/79) Use Node v22 LTS ([@bertdeblock](https://github.com/bertdeblock))
+
+#### :bug: Bug Fix
+* `@ember/addon-blueprint`
+  * [#80](https://github.com/ember-cli/ember-addon-blueprint/pull/80) Sort `devDependencies` in generated `package.json` file ([@bertdeblock](https://github.com/bertdeblock))
+  * [#78](https://github.com/ember-cli/ember-addon-blueprint/pull/78) Remove root `package-lock.json` file ([@bertdeblock](https://github.com/bertdeblock))
+  * [#77](https://github.com/ember-cli/ember-addon-blueprint/pull/77) Remove unnecessary backticks in `.try.mjs` file ([@bertdeblock](https://github.com/bertdeblock))
+
+#### :memo: Documentation
+* `@ember/addon-blueprint`
+  * [#75](https://github.com/ember-cli/ember-addon-blueprint/pull/75) Fix typo in README WIP section ([@evoactivity](https://github.com/evoactivity))
+
+#### Committers: 2
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+- Liam Potter ([@evoactivity](https://github.com/evoactivity))
+
 ## Release (2025-08-13)
 
 * @ember/addon-blueprint 0.9.1 (patch)
