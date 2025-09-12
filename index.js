@@ -1,8 +1,22 @@
 'use strict';
 
+const path = require('path');
+const { sortPackageJson } = require('sort-package-json');
+const FileInfo = require('@ember-tooling/blueprint-model/utilities/file-info');
+
 let date = new Date();
 
 const description = 'The default blueprint for Embroider v2 addons.';
+
+function stringifyAndNormalize(contents) {
+  return `${JSON.stringify(contents, null, 2)}\n`;
+}
+
+const replacers = {
+  'package.json'(content) {
+    return this.updatePackageJson(content);
+  },
+};
 
 module.exports = {
   description,
@@ -59,6 +73,45 @@ module.exports = {
     }
 
     return files;
+  },
+
+  updatePackageJson(content) {
+    let contents = JSON.parse(content);
+    return stringifyAndNormalize(sortPackageJson(contents));
+  },
+
+  /**
+   * @override
+   *
+   * This modification of buildFileInfo allows our differing
+   * input files to output to a single file, depending on the options.
+   * For example:
+   *
+   *   for javascript,
+   *     _ts_eslint.config.mjs is deleted
+   *     _js_eslint.config.mjs is renamed to eslint.config.mjs
+   *
+   *   for typescript,
+   *     _js_eslint.config.mjs is deleted
+   *     _ts_eslint.config.mjs is renamed to eslint.config.mjs
+   */
+  buildFileInfo(intoDir, templateVariables, file, _commandOptions) {
+    let mappedPath = this.mapFile(file, templateVariables);
+    let options = {
+      action: 'write',
+      outputBasePath: path.normalize(intoDir),
+      outputPath: path.join(intoDir, mappedPath),
+      displayPath: path.normalize(mappedPath),
+      inputPath: this.srcPath(file),
+      templateVariables,
+      ui: this.ui,
+    };
+
+    if (file in replacers) {
+      options.replacer = replacers[file].bind(this);
+    }
+
+    return new FileInfo(options);
   },
 };
 
