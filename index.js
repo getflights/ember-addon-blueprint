@@ -1,8 +1,6 @@
 'use strict';
 
-const path = require('path');
 const { sortPackageJson } = require('sort-package-json');
-const FileInfo = require('@ember-tooling/blueprint-model/utilities/file-info');
 
 let date = new Date();
 
@@ -95,23 +93,14 @@ module.exports = {
    *     _js_eslint.config.mjs is deleted
    *     _ts_eslint.config.mjs is renamed to eslint.config.mjs
    */
-  buildFileInfo(intoDir, templateVariables, file, _commandOptions) {
-    let mappedPath = this.mapFile(file, templateVariables);
-    let options = {
-      action: 'write',
-      outputBasePath: path.normalize(intoDir),
-      outputPath: path.join(intoDir, mappedPath),
-      displayPath: path.normalize(mappedPath),
-      inputPath: this.srcPath(file),
-      templateVariables,
-      ui: this.ui,
-    };
+  buildFileInfo(_intoDir, _templateVariables, file, _commandOptions) {
+    let fileInfo = this._super.buildFileInfo.apply(this, arguments);
 
     if (file in replacers) {
-      options.replacer = replacers[file].bind(this);
+      fileInfo.replacer = replacers[file].bind(this);
     }
 
-    return new FileInfo(options);
+    return fileInfo;
   },
 };
 
