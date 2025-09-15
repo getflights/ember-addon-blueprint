@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2025-09-09)
 
 * @ember/addon-blueprint 0.10.0 (minor)
